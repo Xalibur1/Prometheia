@@ -6,7 +6,7 @@ import numpy as np
 import pandas_ta as ta
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import classification_report
+#from sklearn.metrics import classification_report
 
 class StockQuery(BaseModel):
     ticker: str
@@ -47,6 +47,3 @@ model = RandomForestClassifier(n_estimators=100, random_state=42)
 model.fit(X_train, y_train)
 
 y_pred = model.predict(X_test)
-print(classification_report(y_test, y_pred))
-
-df[['Close', 'Trend']].tail()
